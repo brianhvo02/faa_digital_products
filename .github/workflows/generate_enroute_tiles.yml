@@ -193,7 +193,7 @@ jobs:
           name: enroute
       - name: Unpack and push enroute tiles
         run: |
-          # git rm enroute/*
+          git rm enroute/*
           unzip *.zip
           rm *.zip
           git add enroute
