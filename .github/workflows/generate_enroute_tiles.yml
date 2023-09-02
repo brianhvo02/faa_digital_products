@@ -11,15 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: scripts
-          path: scripts
-      - uses: actions/checkout@v3
-        with:
           ref: main
           sparse-checkout: .
+      - uses: actions/checkout@v3
+        with:
+          ref: scripts
+          path: scripts
       - name: Check if new edition is available
         run: |
           ls -la
+          ls -la ..
           GIT_LOG=$(git log) node ./scripts/check_enroute_edition.mjs
   us_low:
     runs-on: ubuntu-latest
