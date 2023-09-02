@@ -20,7 +20,7 @@ jobs:
           sparse-checkout: .
       - name: Check if new edition is available
         run: |
-          ls -al main
+          git init
           GIT_LOG=$(git -c ./main log) node ./scripts/check_enroute_edition.mjs
   us_low:
     runs-on: ubuntu-latest
