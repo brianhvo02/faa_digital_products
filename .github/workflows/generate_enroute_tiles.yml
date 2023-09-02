@@ -194,7 +194,7 @@ jobs:
       - name: Unpack and push enroute tiles
         run: |
           git rm --sparse enroute/*
-          unzip *.zip
+          unzip \*.zip
           rm *.zip
           git add --sparse enroute
           git config user.name 'github-actions[bot]'
