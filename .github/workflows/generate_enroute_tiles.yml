@@ -193,10 +193,10 @@ jobs:
           name: enroute
       - name: Unpack and push enroute tiles
         run: |
-          git rm enroute/*
+          git rm --sparse enroute/*
           unzip *.zip
           rm *.zip
-          git add enroute
+          git add --sparse enroute
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git commit -m "Update enroute tiles $(date +'%Y-%m-%d')"
