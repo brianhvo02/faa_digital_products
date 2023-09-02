@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
+      <Title>ENR_L23.tif</Title>
+      <Abstract></Abstract>
+      <SRS>EPSG:3857</SRS>
+      <BoundingBox minx="-86.25157768251275" miny="23.40826412307079" maxx="-74.95460547587798" maxy="28.18107874043951"/>
+      <Origin x="-86.25157768251275" y="23.40826412307079"/>
+      <TileFormat width="256" height="256" mime-type="image/png" extension="png"/>
+      <TileSets profile="mercator">
+        <TileSet href="4" units-per-pixel="9783.93961875000059" order="4"/>
+        <TileSet href="5" units-per-pixel="4891.96980937500030" order="5"/>
+        <TileSet href="6" units-per-pixel="2445.98490468750015" order="6"/>
+        <TileSet href="7" units-per-pixel="1222.99245234375007" order="7"/>
+        <TileSet href="8" units-per-pixel="611.49622617187504" order="8"/>
+        <TileSet href="9" units-per-pixel="305.74811308593752" order="9"/>
+        <TileSet href="10" units-per-pixel="152.87405654296876" order="10"/>
+        <TileSet href="11" units-per-pixel="76.43702827148438" order="11"/>
+      </TileSets>
+    </TileMap>
+    

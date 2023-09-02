@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
+      <Title>ENR_AKL03_OME.tif</Title>
+      <Abstract></Abstract>
+      <SRS>EPSG:3857</SRS>
+      <BoundingBox minx="-167.07857280123469" miny="63.81149484928586" maxx="-163.21856686081469" maxy="65.41995091073996"/>
+      <Origin x="-167.07857280123469" y="63.81149484928586"/>
+      <TileFormat width="256" height="256" mime-type="image/png" extension="png"/>
+      <TileSets profile="mercator">
+        <TileSet href="6" units-per-pixel="2445.98490468750015" order="6"/>
+        <TileSet href="7" units-per-pixel="1222.99245234375007" order="7"/>
+        <TileSet href="8" units-per-pixel="611.49622617187504" order="8"/>
+        <TileSet href="9" units-per-pixel="305.74811308593752" order="9"/>
+        <TileSet href="10" units-per-pixel="152.87405654296876" order="10"/>
+      </TileSets>
+    </TileMap>
+    

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
+      <Title>ENR_A02_PHX.tif</Title>
+      <Abstract></Abstract>
+      <SRS>EPSG:3857</SRS>
+      <BoundingBox minx="-112.90221679835822" miny="32.75868174146152" maxx="-111.18942398710310" maxy="34.16974648938536"/>
+      <Origin x="-112.90221679835822" y="32.75868174146152"/>
+      <TileFormat width="256" height="256" mime-type="image/png" extension="png"/>
+      <TileSets profile="mercator">
+        <TileSet href="7" units-per-pixel="1222.99245234375007" order="7"/>
+        <TileSet href="8" units-per-pixel="611.49622617187504" order="8"/>
+        <TileSet href="9" units-per-pixel="305.74811308593752" order="9"/>
+        <TileSet href="10" units-per-pixel="152.87405654296876" order="10"/>
+        <TileSet href="11" units-per-pixel="76.43702827148438" order="11"/>
+      </TileSets>
+    </TileMap>
+    
