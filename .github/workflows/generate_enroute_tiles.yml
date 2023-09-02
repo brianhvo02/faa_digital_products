@@ -183,7 +183,7 @@ jobs:
   #         path: Caribbean_area_enroute.zip
   unpack_and_push:
     runs-on: ubuntu-latest
-    needs: [us_low, us_high, us_area, alaska_low, alaska_high, pacific_high, caribbean_low, caribbean_high, caribbean_area]
+    needs: [us_low, us_high, us_area, alaska_low, alaska_high, pacific_high]
     steps:
       - uses: actions/checkout@v3
         with:
