@@ -19,78 +19,78 @@ jobs:
           path: scripts
       - name: Check if new edition is available
         run: GIT_LOG=$(git log) node ./scripts/check_enroute_edition.mjs
-  us_low:
-    runs-on: ubuntu-latest
-    needs: check_edition
-    if: ${{ needs.check_edition.result == 'success' }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: scripts
-      - name: Download US low enroute and generate tiles
-        run: ./enroute_download
-        env:
-          GEONAME: US
-          SERIES_TYPE: low
-      - name: Upload US low enroute artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: enroute
-          path: US_low_enroute.zip
-  us_high:
-    runs-on: ubuntu-latest
-    needs: check_edition
-    if: ${{ needs.check_edition.result == 'success' }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: scripts
-      - name: Download US high enroute and generate tiles
-        run: ./enroute_download
-        env:
-          GEONAME: US
-          SERIES_TYPE: high
-      - name: Upload US high enroute artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: enroute
-          path: US_high_enroute.zip
-  us_area:
-    runs-on: ubuntu-latest
-    needs: check_edition
-    if: ${{ needs.check_edition.result == 'success' }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: scripts
-      - name: Download US area enroute and generate tiles
-        run: ./enroute_download
-        env:
-          GEONAME: US
-          SERIES_TYPE: area
-      - name: Upload US area enroute artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: enroute
-          path: US_area_enroute.zip
-  alaska_low:
-    runs-on: ubuntu-latest
-    needs: check_edition
-    if: ${{ needs.check_edition.result == 'success' }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: scripts
-      - name: Download Alaska low enroute and generate tiles
-        run: ./enroute_download
-        env:
-          GEONAME: Alaska
-          SERIES_TYPE: low
-      - name: Upload Alaska low enroute artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: enroute
-          path: Alaska_low_enroute.zip
+  # us_low:
+  #   runs-on: ubuntu-latest
+  #   needs: check_edition
+  #   if: ${{ needs.check_edition.result == 'success' }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         ref: scripts
+  #     - name: Download US low enroute and generate tiles
+  #       run: ./enroute_download
+  #       env:
+  #         GEONAME: US
+  #         SERIES_TYPE: low
+  #     - name: Upload US low enroute artifact
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: enroute
+  #         path: US_low_enroute.zip
+  # us_high:
+  #   runs-on: ubuntu-latest
+  #   needs: check_edition
+  #   if: ${{ needs.check_edition.result == 'success' }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         ref: scripts
+  #     - name: Download US high enroute and generate tiles
+  #       run: ./enroute_download
+  #       env:
+  #         GEONAME: US
+  #         SERIES_TYPE: high
+  #     - name: Upload US high enroute artifact
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: enroute
+  #         path: US_high_enroute.zip
+  # us_area:
+  #   runs-on: ubuntu-latest
+  #   needs: check_edition
+  #   if: ${{ needs.check_edition.result == 'success' }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         ref: scripts
+  #     - name: Download US area enroute and generate tiles
+  #       run: ./enroute_download
+  #       env:
+  #         GEONAME: US
+  #         SERIES_TYPE: area
+  #     - name: Upload US area enroute artifact
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: enroute
+  #         path: US_area_enroute.zip
+  # alaska_low:
+  #   runs-on: ubuntu-latest
+  #   needs: check_edition
+  #   if: ${{ needs.check_edition.result == 'success' }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         ref: scripts
+  #     - name: Download Alaska low enroute and generate tiles
+  #       run: ./enroute_download
+  #       env:
+  #         GEONAME: Alaska
+  #         SERIES_TYPE: low
+  #     - name: Upload Alaska low enroute artifact
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: enroute
+  #         path: Alaska_low_enroute.zip
   alaska_high:
     runs-on: ubuntu-latest
     needs: check_edition
@@ -183,7 +183,7 @@ jobs:
   #         path: Caribbean_area_enroute.zip
   unpack_and_push:
     runs-on: ubuntu-latest
-    needs: [pacific_high]
+    needs: [alaska_high, pacific_high]
     steps:
       - uses: actions/checkout@v3
         with:
