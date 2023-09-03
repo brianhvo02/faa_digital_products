@@ -8,5 +8,5 @@ const { edition: [ { editionDate } ]} = await fetch('https://external-api.faa.go
     }
 }).then(res => res.json());
 
-// if (new Date(GIT_LOG.match(/(?<=Date:\s+).+/)[0]) > new Date(editionDate))
-//     throw new Error('No new edition available.');
+if (new Date(GIT_LOG.match(/(?<=Date:\s+).+/)[0]) > new Date(editionDate))
+    throw new Error('No new edition available.');
