@@ -1,0 +1,28 @@
+name: Generate CIFP GeoJSON
+
+on:
+  schedule:
+  - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate_geojson:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+          sparse-checkout: .
+      - uses: actions/checkout@v3
+        with:
+          ref: scripts
+          path: scripts
+      - name: Unpack and push enroute tiles
+        run: |
+          npm --prefix scripts install
+          node ./scripts/cifp_get_geojson.mjs
+          git add --sparse geo.json cifp_edition.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git commit -m "Update CIFP GeoJSON $(date +'%Y-%m-%d')"
+          git push

@@ -18,7 +18,12 @@ jobs:
           ref: scripts
           path: scripts
       - name: Check if new edition is available
-        run: GIT_LOG=$(git log) node ./scripts/check_enroute_edition.mjs
+        run: node ./scripts/check_enroute_edition.mjs
+      - name: Upload enroute_edition.txt
+        uses: actions/upload-artifact@v3
+        with:
+          name: enroute
+          path: enroute_edition.txt
   us_low:
     runs-on: ubuntu-latest
     needs: check_edition
