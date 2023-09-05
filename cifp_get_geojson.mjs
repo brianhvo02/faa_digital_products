@@ -44,4 +44,17 @@ const downloadCIFP = async () => {
 }
 
 const features = await downloadCIFP().then(extractData);
-await writeFile('geo.json', JSON.stringify(features));
+
+const {
+    airways_enroute, 
+    sids, stars, approaches,
+    ...waypoints
+} = features;
+
+const procedures = {
+    airways_enroute, 
+    sids, stars, approaches
+};
+
+await writeFile('procedures.json', JSON.stringify(procedures));
+await writeFile('points.json', JSON.stringify(waypoints));
