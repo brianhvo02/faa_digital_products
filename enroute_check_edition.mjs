@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
 
 const { edition: [ { editionDate } ]} = await fetch('https://external-api.faa.gov/apra/enroute/info', {
     headers: {
