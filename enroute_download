@@ -2,7 +2,7 @@
 
 sudo add-apt-repository ppa:ubuntugis/ppa -y
 sudo apt install gdal-bin -y
-node get_enroute_urls.mjs
+node enroute_get_urls.mjs
 cat ./temp/enroute_urls.txt | parallel "wget -P temp {} && unzip -o -d temp ./temp/{/}"
 find temp -type f -name "*.tif" | parallel "gdal2tiles.py -q -w none {} ./enroute/{/.} && echo ' - Completed {/.}'"
 zip -r ${GEONAME}_${SERIES_TYPE}_enroute.zip enroute/*
