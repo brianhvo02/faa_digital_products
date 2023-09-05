@@ -18,7 +18,7 @@ jobs:
           ref: scripts
           path: scripts
       - name: Check if new edition is available
-        run: node ./scripts/check_enroute_edition.mjs
+        run: node ./scripts/enroute_check_edition.mjs
       - name: Upload enroute_edition.txt
         uses: actions/upload-artifact@v3
         with:
