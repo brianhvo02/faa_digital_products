@@ -1,3 +1,5 @@
+import { readFile } from 'fs/promises';
+
 const { edition: [ { editionDate } ]} = await fetch('https://external-api.faa.gov/apra/enroute/info', {
     headers: {
         'Accept': 'application/json'
